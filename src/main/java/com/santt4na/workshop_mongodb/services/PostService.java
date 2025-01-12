@@ -1,5 +1,7 @@
 package com.santt4na.workshop_mongodb.services;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,4 +27,8 @@ public class PostService {
       return repo.searchTitle(text);
    }
 
+   public List<Post> fullSearch(String text, Date minDate, Date maxDate) {
+      maxDate = new Date(maxDate.getTime() + 86399999);
+      return repo.fullSearch(text, minDate, maxDate);
+   }
 }
