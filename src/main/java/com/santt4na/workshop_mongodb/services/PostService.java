@@ -1,6 +1,5 @@
 package com.santt4na.workshop_mongodb.services;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +19,10 @@ public class PostService {
    public Post findById(String id) {
       Optional<Post> obj = repo.findById(id);
       return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+   }
+
+   public List<Post> findByTitle(String text) {
+      return repo.findByTitleContainingIgnoreCase(text);
    }
 
 }
