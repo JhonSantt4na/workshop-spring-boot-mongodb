@@ -31,4 +31,5 @@ public class PostService {
       maxDate = new Date(maxDate.getTime() + 86399999);
       return repo.fullSearch(text, minDate, maxDate);
    }
+   // Finalizando o Projeto. Hoje instalei e configurei o Java FX para Linux/Vscode
 }
